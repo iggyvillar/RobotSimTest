@@ -42,6 +42,9 @@ public:
 	//return ip address within mysocket obj
 	std::string GetIPAddr();
 
+	//set ip address
+	void SetIPAddr(std::string ipAdress);
+
 	//set porty
 	void SetPort(int port);
 

@@ -30,11 +30,14 @@ struct Header {
 };
 
 // drivebody struct
+#pragma pack(push, 1)
 struct driveBody {
 	unsigned char direction;
 	unsigned char duration;
 	unsigned char speed;
 };
+#pragma pack(pop)
+
 
 // telemetry struct
 struct telemetry {

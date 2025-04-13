@@ -175,6 +175,16 @@ string MySocket::GetIPAddr() {
     return IPAddr;
 }
 
+void MySocket::SetIPAddr(std::string ipAddress) {
+    if (bTCPConnect) {
+        cout << "cannot change IP while connected" << endl;
+        return;
+    }
+
+    IPAddr = ipAddress;
+    inet_pton(AF_INET, IPAddr.c_str(), &SvrAddr.sin_addr);
+}
+
 void MySocket::SetPort(int portNumber) {
     if (bTCPConnect) {
         cout << "cannot change port while connected" << endl;
